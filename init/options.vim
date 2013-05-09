@@ -15,11 +15,6 @@
   set viminfo+=!                 " make sure it can save viminfo
 
   set list                       " Show whitespace
-if has("gui_running")
-  set listchars=trail:·
-else
-  set listchars=trail:~
-endif
 
 " Visual Cues
   set showmatch                                      " show matching brackets

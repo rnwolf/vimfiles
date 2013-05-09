@@ -1,30 +1,6 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-" Setting up Vundle - the vim plugin bundler
-let iCanHazVundle=1
-if has('win32') || has('win64')
-    " Install in windows environment
-    let vundle_readme=expand("~/vimfiles/bundle/vundle/README.md")
-	if !filereadable(vundle_readme) 
-		echo "Installing Vundle.."
-		echo ""
-		silent !mkdir -p ~/vimfiles/bundle
-		silent !git clone https://github.com/gmarik/vundle ~/vimfiles/bundle/vundle
-		let iCanHazVundle=0
-	endif
-else
-    " Usual quickstart instructions
-    let vundle_readme=expand("~/.vim/bundle/vundle/README.md")
-	if !filereadable(vundle_readme) 
-		echo "Installing Vundle.."
-		echo ""
-		silent !mkdir -p ~/.vim/bundle
-		silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-		let iCanHazVundle=0
-	endif
-endif
-
 if has('win32') || has('win64')
    set rtp+=~/vimfiles/bundle/vundle/
    call vundle#rc('$HOME/vimfiles/bundle/')
@@ -39,9 +15,7 @@ endif
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
-"
 " original repos on github
-
 " Python and PHP Debugger
 Bundle 'fisadev/vim-debug.vim'
 " Better file browser
@@ -107,12 +81,6 @@ filetype plugin indent on     " required!
 
 " https://github.com/plasticboy/vim-markdown/ # Syntax highlighting and matching rules for Markdown.
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-
-if iCanHazVundle == 0
-	echo "Installing Bundles, please ignore key map error messages"
-	echo ""
-:BundleInstall
-endif
 
 filetype plugin indent on
 
