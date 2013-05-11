@@ -220,6 +220,7 @@ endif
 " Set the colour scheme
 "-----------------------------
 " Solarized - A well thought out colour scheme for VIM
+" See the a version configured for vim at https://github.com/altercation/vim-colors-solarized
 "
 " if you are going to use terminal then setup emulator's colorscheme to used the Solarized palette.
 " Get Palett from http://ethanschoonover.com/solarized
@@ -228,7 +229,7 @@ endif
 " Ubuntu  http://www.webupd8.org/2011/04/solarized-must-have-color-paletter-for.html
 " http://www.if-not-true-then-false.com/2012/solarized-linux/
 syntax enable
-set background=dark   " dark or light 
+set background=light   " dark or light 
 colorscheme solarized
 
 
@@ -279,7 +280,6 @@ if has("gui_running")
   set guioptions-=L " don't show scrollbars Disallows left handed scrollbar
 
   set guioptions+=c " use console dialog rather than popup dialog
-  set t_Co=256
 endif
 
   
@@ -382,7 +382,7 @@ augroup END
 "--------------------------------------------  
 " Settings required for Poweline Bundle
 "--------------------------------------------
-  set t_Co=256
+  "set t_Co=256
   set guifont=Consolas\ for\ Powerline\ FixedD:h9
   "set guifont=Menlo Regular for Powerline:h15
   "let g:Powerline_symbols="fancy"
