@@ -186,7 +186,7 @@ endif
   set autoread					 " Automatically re-read any files that have been updated externaly
   set autowrite					 " Automtically write whenoeve a buffer is switched or closed
   
-  set scrolloff=3				 " The number of lines to keep below and above the cursor position
+  set scrolloff=7				 " The number of lines to keep below and above the cursor position
   set sidescrolloff=7			 " Number of lines visible in side scrolling
   set wrap						 " Line wrap
   set linebreak					 " only wrap whole words
@@ -234,9 +234,9 @@ colorscheme solarized
 
 
 " Use brighter colors if your xterm has a dark background.
-if &term =~ "xterm"
-  set background=dark
-endif
+"if &term =~ "xterm"
+"  set background=dark
+"endif
   
 "------------------------------
 " Disable beep and flash with an autocmd
@@ -349,9 +349,12 @@ map <leader>s? z=  " a list of suggested corrections with the command
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
-  
-"--------------------
-" Plugin customisation
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" shortcut mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" See http://nvie.com/posts/how-i-boosted-my-vim/
+" No need to press shit to get : just use ;
+nnoremap ; :
 "--------------------
 " Status Line
   set laststatus=2
