@@ -24,6 +24,7 @@ Bundle 'xolox/vim-shell'
 Bundle 'xolox/vim-session'
 
 " Python and PHP Debugger
+Bundle 'jabapyth/vim-debug'
 Bundle 'fisadev/vim-debug.vim'
 
 "  adds all the Python functionality you could ever want in Vim
@@ -130,12 +131,6 @@ filetype plugin indent on
 
 " Source initialization files
 " runtime! init/**.vim
-
-" configure Vim to watch for changes in your .vimrc and automatically reload the config.
-augroup myvimrc
-    au!
-    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC 
-augroup END
 
 nmap <leader>v :tabedit $MYVIMRC<CR>
 
@@ -266,8 +261,6 @@ set tabstop=4
 
 "set guifont=Source_Code_Pro:h12:cANSI
 if has("gui_running")
-  set guifont=Source_Code_Pro:h12:cANSI
-
   set guioptions-=A     "Disallows putting highlighted text into copy register
   
   set guioptions-=e " don't use gui tab apperance
@@ -280,6 +273,19 @@ if has("gui_running")
   set guioptions-=L " don't show scrollbars Disallows left handed scrollbar
 
   set guioptions+=c " use console dialog rather than popup dialog
+endif
+
+
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Source\ Code\ Pro\ for\ Powerline\ 11
+  elseif has("gui_photon")
+    set guifont=Source\ Code\ Pro\ for\ Powerline:s11
+  elseif has("x11")
+    set guifont=-*-courier-medium-r-normal-*-*-180-*-*-m-*-*
+  else
+    set guifont=Source_Code_Pro_for_Powerline:h11:cDEFAULT
+  endif
 endif
 
   
@@ -386,7 +392,7 @@ augroup END
 " Settings required for Poweline Bundle
 "--------------------------------------------
   "set t_Co=256
-  set guifont=Consolas\ for\ Powerline\ FixedD:h9
+  "set guifont=Consolas\ for\ Powerline\ FixedD:h9
   "set guifont=Menlo Regular for Powerline:h15
   "let g:Powerline_symbols="fancy"
   "set rtp+=~/vimfile/bundle/powerline/powerline/bindings/vim
